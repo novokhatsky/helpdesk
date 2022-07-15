@@ -1,0 +1,15 @@
+{
+    "name": "novokhatsky/helpdesk",
+    "description": "helpdesk",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Helpdesk\\": "src/"
+        }
+    },
+    "require": {
+        "slim/slim": "3.*",
+        "bryanjhv/slim-session": "3.*",
+        "slim/php-view": "2.*"
+    }
+}
