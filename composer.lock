@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a473aad1aa5afe2f5890b69df0d04e7",
+    "content-hash": "fd55e4f8fb23429e98d8a3a9bb1272ae",
     "packages": [
         {
             "name": "bryanjhv/slim-session",
@@ -113,6 +113,27 @@
                 "source": "https://github.com/nikic/FastRoute/tree/master"
             },
             "time": "2018-02-13T20:26:39+00:00"
+        },
+        {
+            "name": "novokhatsky/db",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/novokhatsky/db",
+                "reference": "e19a7ce6a5acee10fba155e330a729bc4821ef35"
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Novokhatsky\\": "/src"
+                }
+            },
+            "description": "wrapper for mysql",
+            "time": "2022-07-29T06:56:13+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -402,7 +423,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "novokhatsky/db": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

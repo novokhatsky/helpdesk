@@ -15,7 +15,11 @@ class HomeController
 
     public function index($request, $response)
     {
-        $name = $request->getAttribute('name');
+
+        $listService = $this
+            ->container
+            ->db
+            ->getList('select id_service, name from service order by id_service');
 
         return $this
             ->container
@@ -24,8 +28,15 @@ class HomeController
                 $response,
                 'index.php',
                 [
-                    'name' => $name,
+                    'service' => $listService,
                 ]
             );
+    }
+
+    public function newbid($request, $response)
+    {
+        $data = $request->getParsedBody();
+        print_r($data);
+        
     }
 }

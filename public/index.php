@@ -24,7 +24,14 @@ $container['view'] = function ($c) {
     return new \Slim\Views\PhpRenderer('../templates');
 };
 
-$app->get('/hello/{name}', '\Helpdesk\Controllers\HomeController:index');
+$container['db_config'] = require_once '../config/db.php';
+
+$container['db'] = function ($c) {
+    return new \Novokhatsky\DbConnect($c['db_config']);
+};
+
+$app->get('/', '\Helpdesk\Controllers\HomeController:index');
+$app->post('/', '\Helpdesk\Controllers\HomeController:newbid');
 
 $app->run();
 

@@ -1,1 +1,4 @@
 /vendor/
+tags
+*.swp
+*.swo
