@@ -19,7 +19,8 @@
         <div>
             <div>Тип услуги:</div>
             <div>
-                <select name="service">
+                <select name="id_service" >
+                    <option>выберите тип заявки</option>
                     <?php foreach ($service as $row) { ?>
                         <option value="<?=$row['id_service']?>"><?=$row['name']?></option>
                     <?php } ?>

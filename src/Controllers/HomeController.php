@@ -36,7 +36,26 @@ class HomeController
     public function newbid($request, $response)
     {
         $data = $request->getParsedBody();
-        print_r($data);
-        
+
+        $params = [
+            'fio' => $data['fio'],
+            'cabinet' => $data['cabinet'],
+            'id_service' => $data['id_service'],
+            'description' => $data['description'],
+        ];
+
+        $new_bid = new \Helpdesk\Models\Bid($this->container->db);
+
+        // todo ошибки обработать через исключения
+        $new_bid->add($params);
+
+        return $this
+            ->container
+            ->view
+            ->render(
+                $response,
+                'save_ok.php'
+            );
+
     }
 }

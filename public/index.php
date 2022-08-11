@@ -33,5 +33,7 @@ $container['db'] = function ($c) {
 $app->get('/', '\Helpdesk\Controllers\HomeController:index');
 $app->post('/', '\Helpdesk\Controllers\HomeController:newbid');
 
+$app->get('/admin', '\Helpdesk\Controllers\AdminController:index');
+
 $app->run();
 
