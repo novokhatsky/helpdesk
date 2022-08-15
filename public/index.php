@@ -34,6 +34,7 @@ $app->get('/', '\Helpdesk\Controllers\HomeController:index');
 $app->post('/', '\Helpdesk\Controllers\HomeController:newbid');
 
 $app->get('/admin', '\Helpdesk\Controllers\AdminController:index');
+$app->get('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:detal');
 
 $app->run();
 

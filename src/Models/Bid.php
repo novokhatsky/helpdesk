@@ -42,4 +42,23 @@ class Bid
                     dt_create'
             );
     }
+
+
+    public function detal($id_bid)
+    {
+        return $this
+            ->db
+            ->getRow('
+                select
+                    id_bid, dt_create, author, cabinet, description,
+                    status.name as sname, service.name as uname
+                from
+                    bid
+                    join status using (id_status)
+                    join service using (id_service)
+                where
+                    id_bid = :id_bid',
+                ['id_bid' => $id_bid]
+            );
+    }
 }

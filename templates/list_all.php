@@ -27,7 +27,7 @@
                     <?php
                         foreach ($bids as $bid) { ?>
                             <tr>
-                                <td><?=$bid['id_bid']?></td>
+                                <td><a href="/admin/<?=$bid['id_bid']?>"><?=$bid['id_bid']?></a></td>
                                 <td><?=$bid['dt_create']?></td>
                                 <td><?=$bid['author']?></td>
                                 <td><?=$bid['cabinet']?></td>

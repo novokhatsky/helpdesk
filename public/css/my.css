@@ -32,6 +32,29 @@ hr {
   overflow: visible;
 }
 
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -58,6 +81,16 @@ p {
 @media (min-width: 576px) {
   .container, .container-sm {
     max-width: 540px;
+  }
+  .col-sm-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-sm-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
   }
 }
 
@@ -100,7 +133,7 @@ p {
   margin-left: -15px;
 }
 
-.col {
+.col col-sm-3 col-sm-9 {
   position: relative;
   width: 100%;
   padding-right: 15px;
