@@ -10,6 +10,9 @@
 
 <div class="container">
     <div class="row">
+        <h2 class="col">Оформление заявки</h2>
+    </div>
+    <div class="row">
         <div class="col">
             <form method="post">
                 <div class="form-group">
