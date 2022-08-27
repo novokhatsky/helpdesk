@@ -10,6 +10,7 @@
 <div class="container">
     <div class="row">
         <h2 class="col">Список заявок</h2>
+        <h2 class="col" style="text-align: right"><a href="/logout">Выход</a></h2>
     </div>
     <div class="row">
         <div class="col">

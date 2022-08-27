@@ -61,4 +61,9 @@ class Bid
                 ['id_bid' => $id_bid]
             );
     }
+
+
+    public function currentStatus($id_bid)
+    {
+    }
 }

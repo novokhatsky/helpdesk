@@ -29,6 +29,21 @@
 
         <dt class="col-sm-3">Описание</dt>
         <dd class="col-sm-9"><?=$bid['description']?></dd>
+
+        <dt class="col-sm-3">Статус</dt>
+        <dd class="col-sm-9">
+            <?=$bid['sname']?><br>
+            Изменить статус на: 
+            <form method="post" action="">
+                <select name="new_status" class="form-control" style="width: 200px" required>
+                    <option value=""></option>
+                    <?php foreach ($statuses as $status) { ?>
+                        <option value="<?=$status['id_status']?>"><?=$status['name']?></option>
+                    <?php } ?>
+                </select>
+                <button type="submit" class="btn btn-primary">Применить</button>
+            </form>
+        </dd>
     </dl>
 </div>
 </body>

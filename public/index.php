@@ -30,11 +30,20 @@ $container['db'] = function ($c) {
     return new \Novokhatsky\DbConnect($c['db_config']);
 };
 
+$user = new \Helpdesk\Models\User($container['session']);
+
 $app->get('/', '\Helpdesk\Controllers\HomeController:index');
 $app->post('/', '\Helpdesk\Controllers\HomeController:newbid');
 
-$app->get('/admin', '\Helpdesk\Controllers\AdminController:index');
-$app->get('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:detal');
+$app->get('/login', '\Helpdesk\Controllers\LoginController:index');
+$app->get('/logout', '\Helpdesk\Controllers\LoginController:logout');
+$app->post('/login', '\Helpdesk\Controllers\LoginController:checkLogin');
+
+$app->group('', function () {
+    $this->get('/admin', '\Helpdesk\Controllers\AdminController:index');
+    $this->get('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:detal');
+    $this->post('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:changeStatus');
+    $this->get('/admin/{id_bid}/status', '\Helpdesk\Controllers\AdminController:status');
+})->add(new \Helpdesk\Models\Auth($user));
 
 $app->run();
-
