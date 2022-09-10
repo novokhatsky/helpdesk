@@ -73,7 +73,7 @@ class AdminController
                 ]
             );
 
-        return $response->withRedirect("/admin/{$id_bid}", 301);
+        return $response->withRedirect("/admin", 301);
     }
 
 
