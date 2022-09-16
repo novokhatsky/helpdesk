@@ -39,7 +39,26 @@ class Bid
                     bid
                     join status using (id_status)
                 order by
-                    dt_create'
+                    dt_create desc'
+            );
+    }
+
+    
+    public function filtered($id_filter)
+    {
+        return $this
+            ->db
+            ->getList('
+                select
+                    id_bid, dt_create, author, cabinet, status.name as sname
+                from
+                    bid
+                    join status using (id_status)
+                where
+                    bid.id_status = :id_filter
+                order by
+                    dt_create desc',
+                ['id_filter' => $id_filter]
             );
     }
 

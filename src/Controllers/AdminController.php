@@ -31,6 +31,24 @@ class AdminController
     }
 
 
+    public function filtered($request, $response)
+    {
+
+        $bid = new \Helpdesk\Models\Bid($this->container->db);
+
+        return $this
+            ->container
+            ->view
+            ->render(
+                $response,
+                'list_all.php',
+                [
+                    'bids' => $bid->filtered($request->getAttribute('id_filter')),
+                ]
+            );
+    }
+
+
     public function detal($request, $response)
     {
         $id_bid = $request->getAttribute('id_bid');

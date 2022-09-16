@@ -41,6 +41,7 @@ $app->post('/login', '\Helpdesk\Controllers\LoginController:checkLogin');
 
 $app->group('', function () {
     $this->get('/admin', '\Helpdesk\Controllers\AdminController:index');
+    $this->get('/admin/filter/{id_filter}', '\Helpdesk\Controllers\AdminController:filtered');
     $this->get('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:detal');
     $this->post('/admin/{id_bid}', '\Helpdesk\Controllers\AdminController:changeStatus');
     $this->get('/admin/{id_bid}/status', '\Helpdesk\Controllers\AdminController:status');
